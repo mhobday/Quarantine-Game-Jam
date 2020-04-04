@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpiralPattern : MonoBehaviour
 {
     [SerializeField]
-    private int bulletsAmount = 10;
+    private int bulletAmount = 4;
 
     private float angle = 0f;
 
@@ -25,7 +25,7 @@ public class SpiralPattern : MonoBehaviour
 
     private void Fire()
     {
-        for (int i = 0; i <= bulletsAmount; i++)
+        for (int i = 0; i < bulletAmount; i++)
         {
             float bulDirX = transform.position.x + Mathf.Sin(((angle + 180f * i) * Mathf.PI) / 180f);
             float bulDirY = transform.position.y + Mathf.Cos(((angle + 180f * i) * Mathf.PI) / 180f);
