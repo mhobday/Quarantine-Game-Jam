@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed, transform.position.z);
             }
-        if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Enter))
+        if(Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.Return))
         {
 
         }
