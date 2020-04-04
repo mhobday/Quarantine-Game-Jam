@@ -38,11 +38,5 @@ public class birdMovement : MonoBehaviour
             
             
         }
-        if(timer >= 2)
-        {
-            //Shoot egg
-            print("shoot");
-            timer = 0;
-        }
     }
 }
