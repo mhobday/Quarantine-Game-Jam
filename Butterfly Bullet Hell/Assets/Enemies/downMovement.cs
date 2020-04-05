@@ -6,18 +6,18 @@ using System;
 public class downMovement : MonoBehaviour
 {
 
-    float speed = .003f;
+    float speed = .9f;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = .01f;
+        speed = .9f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.x);
+        transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.x);
         Vector3 viewPosition = 
         Camera.main.WorldToViewportPoint(transform.position);
         if(viewPosition.y < 0)
