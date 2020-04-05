@@ -9,8 +9,11 @@ public class GameManager : MonoBehaviour
     {
 
     }
-//SceneManager.LoadScene("scenename");
-//have to go into build settings and build the scenes
+    
+    //SceneManager.LoadScene("TitleScene");
+    Scene currentScene =  SceneManager.GetActiveScene();
+
+    //have to go into build settings and build the scenes
 
     //title
     //climbing -> spawn enemies, after some amount of time 

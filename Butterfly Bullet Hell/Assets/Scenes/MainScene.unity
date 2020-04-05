@@ -222,6 +222,7 @@ GameObject:
   - component: {fileID: 1069920922}
   - component: {fileID: 1069920921}
   - component: {fileID: 1069920924}
+  - component: {fileID: 1069920925}
   m_Layer: 0
   m_Name: Background
   m_TagString: Untagged
@@ -326,6 +327,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 851303428}
   heart: {fileID: 2063404482638592260, guid: e857893d7cd3474479e8195035792f3a, type: 3}
+--- !u!114 &1069920925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069920920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b213e90d4d69a145883191373b0da67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 4390083741566622106, guid: b0f7290dfd9ddd641b5ba7eab8291874, type: 3}
+  frog: {fileID: 2460212566594368634, guid: e6f63650be9354c47a5ea45e7c0bda83, type: 3}
+  dragonfly: {fileID: 0}
+  leftEdge: -8
+  rightEdge: 8
+  enemyZ: 0
+  birdHeight: 4
 --- !u!1001 &1692843682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -341,12 +361,12 @@ PrefabInstance:
     - target: {fileID: 2280428230427448646, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.2362012
+      value: 2.93
       objectReference: {fileID: 0}
     - target: {fileID: 2280428230427448646, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.040614
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 2280428230427448646, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
         type: 3}

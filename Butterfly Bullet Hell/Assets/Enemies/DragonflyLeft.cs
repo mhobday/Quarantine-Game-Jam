@@ -9,7 +9,9 @@ public class DragonflyLeft : MonoBehaviour
     void Start()
     {
         speed = 2f;
+        this.gameObject.tag = "Dragonfly";
     }
+
 
     // Update is called once per frame
     void Update()

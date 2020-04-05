@@ -15,6 +15,9 @@ public class SpiralPattern : MonoBehaviour
     [SerializeField]
     private float fireRate = 0.1f;
 
+    [SerializeField]
+    private float bulletAcceleration = 1f;
+
     private Vector2 bulletMoveDirection;
 
     // Start is called before the first frame update
@@ -38,6 +41,7 @@ public class SpiralPattern : MonoBehaviour
             bul.transform.rotation = transform.rotation;
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+            bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
 
             angle += 360 / bulletAmount;   //The rate at which the bullet pattern will spiral
 
