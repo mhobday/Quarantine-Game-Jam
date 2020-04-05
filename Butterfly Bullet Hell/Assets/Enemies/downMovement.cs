@@ -11,7 +11,7 @@ public class downMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        speed = .01f;
     }
 
     // Update is called once per frame
