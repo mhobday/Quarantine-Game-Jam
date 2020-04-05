@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector2 moveDirection;
-    private float moveSpeed;
+    public float moveSpeed = 5f;
 
     private void OnEnable()
     {
@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        moveSpeed = 5f;
+
     }
 
     // Update is called once per frame
@@ -37,5 +37,12 @@ public class Bullet : MonoBehaviour
     private void OnDisable()
     {
         CancelInvoke();
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if(this.gameObject.tag == "Friend" && col.gameObject.tag != "Player")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

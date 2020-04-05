@@ -11,9 +11,10 @@ public class Movement : MonoBehaviour
     //Delay is the amount of time before you can fie again
     public float delay = 10f;
     // Start is called before the first frame update
+    private CircleCollider2D circCollider;
     void Start()
     {
-
+        circCollider = GetComponent <CircleCollider2D> ();
     }
 
     // Update is called once per frame
@@ -42,7 +43,7 @@ public class Movement : MonoBehaviour
             GameObject bul = Instantiate(bullet);
             bul.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             bul.GetComponent<Bullet>().SetMoveDirection(new Vector2(0, 1));
-
+            bul.gameObject.tag = "Friend";
         }
     }
 }
