@@ -2,10 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFireBullets : MonoBehaviour
+public class SemiCirclePattern : MonoBehaviour
 {
     [SerializeField]
     private int bulletsAmount = 10;
+
+    [SerializeField]
+    private float bulletAcceleration = 1f;
+
+    [SerializeField]
+    private float fireRate = 2f;
 
     [SerializeField]
     private float startAngle = 90f, endAngle = 270f;
@@ -15,7 +21,7 @@ public class EnemyFireBullets : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("Fire", 0f, 2f);
+        InvokeRepeating("Fire", 0f, fireRate);
     }
 
     private void Fire()
@@ -36,6 +42,7 @@ public class EnemyFireBullets : MonoBehaviour
                 bul.transform.rotation = transform.rotation;
                 bul.SetActive(true);
                 bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+                bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
 
             angle += angleStep;
         }
