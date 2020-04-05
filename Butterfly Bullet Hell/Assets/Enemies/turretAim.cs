@@ -11,7 +11,7 @@ public class turretAim : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.gameObject.tag = "Frog";
     }
 
     // Update is called once per frame

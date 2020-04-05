@@ -7,7 +7,12 @@ public class birdMovement : MonoBehaviour
 {
     public float baseSpeed = 3f;
     public bool moveRight = true;
-    float timer = 0;
+    private float timer = 0;
+
+    private CircleCollider2D circCollider;
+
+
+
     
     // Start is called before the first frame update
     void Start()
@@ -16,6 +21,9 @@ public class birdMovement : MonoBehaviour
         {
             moveRight = false;
         }
+        this.gameObject.tag = "Bird";
+        circCollider = GetComponent<CircleCollider2D>();
+        baseSpeed = 3f;
     }
 
     // Update is called once per frame
@@ -37,6 +45,14 @@ public class birdMovement : MonoBehaviour
             moveRight = !moveRight;
             
             
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.tag != "Bird")
+        {
+            moveRight = !moveRight;
         }
     }
 }
