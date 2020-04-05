@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SemiCirclePattern : MonoBehaviour
+public class SemicirclePattern : MonoBehaviour
 {
     [SerializeField]
     private int bulletsAmount = 10;
@@ -48,5 +48,5 @@ public class SemiCirclePattern : MonoBehaviour
         }
     }
 
-    
+
 }
