@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4419157622532942334}
   - component: {fileID: 4419157622532942306}
   - component: {fileID: 4419157622532942307}
+  - component: {fileID: 1687962069829595917}
   m_Layer: 0
   m_Name: PowerUp
   m_TagString: Untagged
@@ -96,7 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e300270cb27b2824ca80eff2a728da68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency: 0.1
   swing: 5
 --- !u!58 &4419157622532942306
 CircleCollider2D:
@@ -108,7 +108,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -135,3 +135,16 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &1687962069829595917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4419157622532942335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a511aab6f90d35469c522f6ccf5fecf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  circCollider: {fileID: 0}
