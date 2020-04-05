@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SingleTrackingPattern : MonoBehaviour
 {
+    [SerializeField]
+    private GameObject bullet;
 
     [SerializeField]
     private float fireRate = 2f;
@@ -27,14 +29,14 @@ public class SingleTrackingPattern : MonoBehaviour
         
         Vector3 bulMoveVector = (target.transform.position - transform.position).normalized;
 
-        
 
-        GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
+
+        GameObject bul = Instantiate(bullet);
         bul.transform.position = transform.position;
         bul.transform.rotation = transform.rotation;
-        bul.SetActive(true);
         bul.GetComponent<Bullet>().SetMoveDirection(bulMoveVector);
         bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
+        Destroy(bul, 5f);
 
 
 

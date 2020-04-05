@@ -12,22 +12,24 @@ public class Waves : MonoBehaviour
     //Right edge of where enemies spawn
     public float rightEdge = 8;
     public float enemyZ = 0;
+
+    public float frogY = 4.5f;
     public float birdHeight = 4;
     // Start is called before the first frame update
     void Start()
     {
         float space = Mathf.Abs(leftEdge) + Mathf.Abs(rightEdge);
     }
-    public void spawnBird(bool direction, float x, float y)
+    public void spawnBird(bool moveRight, float x, float y)
     {
-        GameObject bir = Instantiate(bird);
+        bird = Instantiate(bird);
         bird.transform.position = new Vector3(x, y, enemyZ);
-        bird.GetComponent<birdMovement>().moveRight = direction;
+        bird.GetComponent<birdMovement>().moveRight = moveRight;
     }
-    public void spawnFrog(float x, float y)
+    public void spawnFrog(float x)
     {
         Instantiate(frog);
-        frog.transform.position = new Vector3(x, y, enemyZ);
+        frog.transform.position = new Vector3(x, frogY, enemyZ);
     }
     public void spawnDragonFly(float x, float y)
     {

@@ -7,6 +7,9 @@ TagManager:
   - Friend
   - Music
   - Power
+  - Bird
+  - Dragonfly
+  - Frog
   layers:
   - Default
   - TransparentFX

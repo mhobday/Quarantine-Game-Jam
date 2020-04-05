@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: -660975774706858132}
   m_Layer: 0
   m_Name: CrossRightDragonfly
-  m_TagString: Untagged
+  m_TagString: Dragonfly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

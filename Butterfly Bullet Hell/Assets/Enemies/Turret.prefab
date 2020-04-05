@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4646690913695764451}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Frog
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7286073a67e022444b5ececc05c4b2cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 2280428230427448644, guid: 1059bb6b4ae12ca4f82a6c77c900111c, type: 3}
 --- !u!114 &-8614525726645626888
 MonoBehaviour:
   m_ObjectHideFlags: 0

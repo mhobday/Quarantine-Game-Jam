@@ -5,8 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class EnemyManagerScripts : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public float bossCounter;
+    public GameObject bird;
+    public GameObject frog;
+    public GameObject downDragonfly;
+
+    public GameObject rightDragonfly;
+
+    public GameObject leftDragonfly;
+
+    public GameObject crossLeftDragonfly;
+
+    public GameObject crossRightDragonfly;
+
+    public int leftEdge = -8;
+    //Right edge of where enemies spawn
+    public int rightEdge = 8;
+    public float enemyZ = 0;
+
+    public float frogY = 4.5f;
+    public float birdHeight = 4;
+    
+    private float bossCounter;
     public float spawnRate;
 
     public int bossSpawn;
@@ -27,6 +46,8 @@ public class EnemyManagerScripts : MonoBehaviour
 
     public int maxFrogSpawn;
 
+    public GameObject spawn;
+
     private float spawnTimer;
 
     private int numDragonflys = 0;
@@ -34,6 +55,9 @@ public class EnemyManagerScripts : MonoBehaviour
     private int numBirds = 0;
 
     private int numFrogs = 0;
+
+    private MonoBehaviour wave;
+    
 
     void Start()
     {
@@ -49,6 +73,16 @@ public class EnemyManagerScripts : MonoBehaviour
         maxBirdSpawn = 2;
         maxFrogSpawn = 2;
         maxDragonflySpawn = 5;
+        leftEdge = -8;
+    //Right edge of where enemies spawn
+        rightEdge = 8;
+        enemyZ = 0;
+
+        frogY = 4.5f;
+        birdHeight = 4;
+        //wave = GetComponent<Waves>();
+
+
     }
 
     // Update is called once per frame
@@ -77,9 +111,15 @@ public class EnemyManagerScripts : MonoBehaviour
     {
         bossCounter += (numBirds - num);
         numBirds = num;
+        int [] used = {-8, -8};
         while(numBirds < maxBirds)
         {
-            //spawn bird
+            used[numFrogs - num] = Random.Range(-7,7);
+            while(used[1] != -8 && used[0] == used[1])
+            {
+                used[1] = Random.Range(-7,7);
+            }
+            spawnBird(true, used[numFrogs - num]);
             numBirds++;
             if(numBirds - num >= maxBirdSpawn)
             {
@@ -92,9 +132,15 @@ public class EnemyManagerScripts : MonoBehaviour
     {
         bossCounter += (numFrogs - num);
         numFrogs = num;
+        int [] used = {-8, -8};
         while(numFrogs < maxFrogs)
         {
-            //spawn frog
+            used[numFrogs - num] = Random.Range(-7,7);
+            while(used[1] != -8 && used[0] == used[1])
+            {
+                used[1] = Random.Range(-7,7);
+            }
+            spawnFrog(used[numFrogs - num]);
             numFrogs++;
             if(numFrogs - num >= maxFrogSpawn)
             {
@@ -107,14 +153,129 @@ public class EnemyManagerScripts : MonoBehaviour
     {
         bossCounter += (numDragonflys - num) * 0.3f;
         numDragonflys = num;
+        int dragonflyDirection = Random.Range(1,5);
+        int numDragonflysSpawn = Random.Range(2,5);
+        int used = 0;
+        int l = leftEdge;
+        int r = rightEdge;
+        if(dragonflyDirection == 4 || dragonflyDirection == 5)
+        {
+            used = Random.Range(0,4);
+        }
+        else if(dragonflyDirection == 1)
+        {
+            used = Random.Range(-7, 3);    
+        }
+        else
+        {
+            used = Random.Range(-4, 0);
+        }   
         while(numDragonflys < maxDragonflys)
         {
-            //spawn dragonfly
+            if(dragonflyDirection == 4)
+            {
+                dragonflySwitch(dragonflyDirection,l, used);
+                if(used < 5)
+                {
+                    used++;
+                }
+                else
+                {
+                    l++;
+                }
+            }
+            else if(dragonflyDirection == 5)
+            {
+                dragonflySwitch(dragonflyDirection, r, used);
+                if(used < 5)
+                {
+                    used++;
+                }
+                else
+                {
+                    l++;
+                }
+            }
+            else if(dragonflyDirection == 1)
+            {
+                dragonflySwitch(dragonflyDirection, used, 0);
+                used++;
+            }
+            else
+            {
+                dragonflySwitch(dragonflyDirection, 0, used);
+                used++;
+            }
             numDragonflys++;
-            if(numDragonflys - num >= maxDragonflySpawn)
+            if(numDragonflys - num >= numDragonflysSpawn)
             {
                 break;
             }
         }
+    }
+
+    public void spawnBird(bool moveRight, float x)
+    {
+        Instantiate(bird);
+        bird.transform.position = new Vector3(x, 4f, enemyZ);
+        bird.GetComponent<birdMovement>().moveRight = moveRight;
+    }
+    public void spawnFrog(float x)
+    {
+        Instantiate(frog);
+        frog.transform.position = new Vector3(x, frogY, enemyZ);
+    }
+    public void spawnDownDragonFly(float x, float y)
+    {
+        Instantiate(downDragonfly);
+        downDragonfly.transform.position = new Vector3(x, y, enemyZ);
+    }
+
+    public void spawnRightDragonFly(float x, float y)
+    {
+        Instantiate(rightDragonfly);
+        rightDragonfly.transform.position = new Vector3(x, y, enemyZ);
+    }
+
+    public void spawnLeftDragonFly(float x, float y)
+    {
+        Instantiate(leftDragonfly);
+        leftDragonfly.transform.position = new Vector3(x, y, enemyZ);
+    }
+
+    public void spawnCrossRightDragonFly(float x, float y)
+    {
+        Instantiate(crossRightDragonfly);
+        crossRightDragonfly.transform.position = new Vector3(x, y, enemyZ);
+    }
+
+    public void spawnCrossLeftDragonFly(float x, float y)
+    {
+        Instantiate(crossLeftDragonfly);
+        crossLeftDragonfly.transform.position = new Vector3(x, y, enemyZ);
+    }
+
+    private void dragonflySwitch(int num, int randomNumX, int randomNumY)
+    {
+        switch(num)
+        {
+            case 1:
+                spawnDownDragonFly(randomNumX, frogY);
+                break;
+            case 2:
+                spawnRightDragonFly(leftEdge, randomNumY);
+                break;
+            case 3:
+                spawnLeftDragonFly(rightEdge, randomNumY);
+                break;
+            case 4:
+                spawnCrossRightDragonFly(randomNumX, randomNumY);
+                break;
+            default:
+                spawnCrossLeftDragonFly(randomNumX, randomNumY);
+                break;
+
+        }    
+
     }
 }
