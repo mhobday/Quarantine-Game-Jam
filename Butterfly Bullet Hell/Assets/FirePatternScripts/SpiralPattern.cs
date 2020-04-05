@@ -39,12 +39,14 @@ public class SpiralPattern : MonoBehaviour
             bul.SetActive(true);
             bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
 
-            angle += spiralRotation;   //The rate at which the bullet pattern will spiral
+            angle += 360 / bulletAmount;   //The rate at which the bullet pattern will spiral
 
             if (angle >= 360f)
             {
-                angle = 0f;
+                angle -= 360f;
             }
         }
+
+        angle += spiralRotation;
     }
 }
