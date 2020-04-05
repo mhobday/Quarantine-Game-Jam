@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2280428230427448697}
   - component: {fileID: 2280428230427448701}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 4934380089401926381, guid: 34bedfd3e3896bc4f867dc87ee02c95c, type: 3}
   baseSpeed: 4
-  delay: 10
+  delay: 0.3
   caterpillar: 0
 --- !u!58 &2280428230427448696
 CircleCollider2D:
@@ -131,8 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 4
-  invFrames: 60
-  cooldown: 120
+  invFrames: 1
+  cooldown: 2
   immune: 0
 --- !u!50 &2280428230427448697
 Rigidbody2D:
