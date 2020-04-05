@@ -52,6 +52,10 @@ public class Health : MonoBehaviour
         {
             invFrames = 1f;
             hp--;
+            if(hp <= 0)
+            {
+                SceneManager.LoadScene("CreditsScene");
+            }
             audi.clip = ouch;
             audi.Play();
 
@@ -59,6 +63,7 @@ public class Health : MonoBehaviour
                 SceneManager.LoadScene("CreditsScene");
             }
         }
+
         if(col.gameObject.tag == "Power")
         {
             hp++;
