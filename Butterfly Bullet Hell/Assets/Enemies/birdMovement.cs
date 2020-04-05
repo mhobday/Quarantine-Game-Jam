@@ -46,7 +46,7 @@ public class birdMovement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag != "Bird")
+        if (col.gameObject.tag == "Bird")
         {
             moveRight = !moveRight;
         }
