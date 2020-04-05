@@ -1,21 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class lives : MonoBehaviour
 {
-    public GameObject player;
-    public Text stock;
+    public Sprite open;
+    public Sprite folded;
+    private SpriteRenderer render;
     // Start is called before the first frame update
     void Start()
     {
-        stock = this.GetComponent<Text>();
+        render = this.GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        stock.text = "x" + player.GetComponent<Health>().hp.ToString();
+
+    }
+    public void Fold()
+    {
+        render.sprite = folded;
+    }
+    public void UnFold()
+    {
+        render.sprite = open;
     }
 }

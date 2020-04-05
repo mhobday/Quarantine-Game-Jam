@@ -9,19 +9,29 @@ public class Movement : MonoBehaviour
     //Used in all movement funcions to decide how far to move
     public float baseSpeed = 4f;
     //Delay is the amount of time before you can fie again
-    public float delay = 10f;
+    public float delay = .3f;
     public bool caterpillar = false;
     // Start is called before the first frame update
     private CircleCollider2D circCollider;
+    private Animator anim;
     void Start()
     {
         circCollider = GetComponent <CircleCollider2D> ();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        delay--;
+        if(caterpillar)
+        {
+            anim.Play("CaterpillarWalk");
+        }
+        else
+        {
+            anim.Play("Fly");
+        }
+        delay -= Time.deltaTime;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             transform.position = new Vector3(transform.position.x - baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
@@ -40,18 +50,20 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.Space) && delay < 0)
         {
-            delay = 10f;
+            delay = .3f;
             GameObject bul = Instantiate(bullet);
-            bul.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+            bul.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
             bul.GetComponent<Bullet>().SetMoveDirection(new Vector2(0, 1));
             bul.gameObject.tag = "Friend";
         }
+
+        //Gabe's junk
         Vector3 viewPosition = 
         Camera.main.WorldToViewportPoint(transform.position);
         float sideOffset = .03f;
         if(caterpillar)
         {
-            sideOffset = .16f;
+            sideOffset = .095f;
         }
         if(viewPosition.x < sideOffset)
         {
