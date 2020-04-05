@@ -308,7 +308,7 @@ Assets\BulletPool.cs
 Assets\EnemyMovement.cs
 Assets\FirePatternScripts\EnemyFireBullets.cs
 Assets\FirePatternScripts\SpiralPattern.cs
-Assets\Movement.cs
+Assets\Player\Health.cs
 Assets\birdMovement.cs
 Assets\downMovement.cs
 Assets\turretAim.cs

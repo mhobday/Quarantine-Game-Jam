@@ -256,8 +256,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 4934380089401926381, guid: 34bedfd3e3896bc4f867dc87ee02c95c, type: 3}
-  baseSpeed: 0.1
-  delay: 30
+  baseSpeed: 0.05
+  delay: 10
 --- !u!114 &997603619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,7 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed63f3a57d42b234699f6c24288d0d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hp: 1
+  hp: 4
   invFrames: 60
 --- !u!1 &1381365841
 GameObject:
