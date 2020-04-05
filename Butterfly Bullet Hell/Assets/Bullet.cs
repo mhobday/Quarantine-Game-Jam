@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     private Vector2 moveDirection;
     public float moveSpeed = 5f;
+    private Animator anim;
 
     private void OnEnable()
     {
@@ -15,7 +16,8 @@ public class Bullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        anim = GetComponent <Animator>();
+        anim.Play("Bullet");
     }
 
     // Update is called once per frame
