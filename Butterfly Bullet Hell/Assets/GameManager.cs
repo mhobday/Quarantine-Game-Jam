@@ -10,8 +10,9 @@ public class GameManager : MonoBehaviour
 
     }
     
-    string scene = "TitleScene";
-    SceneManager.LoadScene(scene);
+    SceneManager.LoadScene("TitleScene");
+    Scene currentScene =  SceneManager.GetActiveScene();
+    
     //have to go into build settings and build the scenes
 
     //title
