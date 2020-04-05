@@ -5,8 +5,8 @@ using System;
 
 public class birdMovement : MonoBehaviour
 {
-    float baseSpeed = .01f;
-    bool moveRight = true;
+    public float baseSpeed = .01f;
+    public bool moveRight = true;
     float timer = 0;
     
     // Start is called before the first frame update
