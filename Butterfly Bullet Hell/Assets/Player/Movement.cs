@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
         float sideOffset = .03f;
         if(caterpillar)
         {
-            sideOffset = .16f;
+            sideOffset = .095f;
         }
         if(viewPosition.x < sideOffset)
         {
