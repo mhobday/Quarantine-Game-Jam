@@ -306,6 +306,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &433714268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433714260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d52f9b20e1bbf4981fe94265ba40ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 4
 --- !u!1001 &454142620
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -872,6 +885,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 4669894362536745417, guid: e6f63650be9354c47a5ea45e7c0bda83,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8448493075787881211, guid: e6f63650be9354c47a5ea45e7c0bda83,
         type: 3}

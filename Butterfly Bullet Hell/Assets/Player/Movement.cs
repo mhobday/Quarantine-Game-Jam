@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +10,7 @@ public class Movement : MonoBehaviour
     public float baseSpeed = .05f;
     //Delay is the amount of time before you can fie again
     public float delay = 10f;
+    public bool caterpillar = false;
     // Start is called before the first frame update
     private CircleCollider2D circCollider;
     void Start()
@@ -44,6 +45,29 @@ public class Movement : MonoBehaviour
             bul.transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z);
             bul.GetComponent<Bullet>().SetMoveDirection(new Vector2(0, 1));
             bul.gameObject.tag = "Friend";
+        }
+        Vector3 viewPosition = 
+        Camera.main.WorldToViewportPoint(transform.position);
+        float sideOffset = .03f;
+        if(caterpillar)
+        {
+            sideOffset = .16f;
+        }
+        if(viewPosition.x < sideOffset)
+        {
+            transform.position = new Vector3(transform.position.x + baseSpeed, transform.position.y, transform.position.z);
+        }
+        else if(viewPosition.x > 1 - sideOffset)
+        {
+            transform.position = new Vector3(transform.position.x - baseSpeed, transform.position.y, transform.position.z);
+        }
+        if(viewPosition.y < .09)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y + baseSpeed, transform.position.z);
+        }
+        else if(viewPosition.y > .9)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed, transform.position.z);
         }
     }
 }
