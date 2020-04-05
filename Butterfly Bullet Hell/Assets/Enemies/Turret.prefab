@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -6368138832103893486}
   - component: {fileID: 3101635763681225306}
   - component: {fileID: 4646690913695764451}
+  - component: {fileID: 8983706349976223674}
   m_Layer: 0
   m_Name: Turret
   m_TagString: Frog
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d52f9b20e1bbf4981fe94265ba40ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audi: {fileID: 0}
   health: 4
 --- !u!50 &-6368138832103893486
 Rigidbody2D:
@@ -181,3 +183,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8983706349976223674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2460212566594368634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1558139744bfa4e4b81d7eb51f862e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 4934380089401926381, guid: 34bedfd3e3896bc4f867dc87ee02c95c, type: 3}
+  fireRate: 0.8
+  bulletAcceleration: 1
