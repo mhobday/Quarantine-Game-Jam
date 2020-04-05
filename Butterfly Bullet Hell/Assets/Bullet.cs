@@ -33,7 +33,14 @@ public class Bullet : MonoBehaviour
 
     private void Destroy()
     {
-        gameObject.SetActive(false);
+        if(this.gameObject.tag == "Friend")
+        {
+            Destroy(this.gameObject);
+        }    
+        else
+        { 
+            gameObject.SetActive(false);
+        }    
     }
 
     private void OnDisable()
