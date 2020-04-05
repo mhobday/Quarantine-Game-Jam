@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class Health : MonoBehaviour
             hp--;
             audi.clip = ouch;
             audi.Play();
+
+            if (hp <= 0) {
+                SceneManager.LoadScene("CreditsScene");
+            }
         }
     }
 }
