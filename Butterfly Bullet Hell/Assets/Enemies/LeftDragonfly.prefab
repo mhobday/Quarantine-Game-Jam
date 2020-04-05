@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5491407821314516483}
   - component: {fileID: 7889210777232372484}
   - component: {fileID: 1305258411346135604}
+  - component: {fileID: -4104458475590995027}
   m_Layer: 0
   m_Name: LeftDragonfly
   m_TagString: Untagged
@@ -95,3 +96,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &-4104458475590995027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7828220463297596809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a53c7cc14e88039429d301bc5f954b3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
