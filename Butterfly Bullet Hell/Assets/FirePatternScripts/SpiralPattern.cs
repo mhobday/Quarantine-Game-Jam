@@ -5,6 +5,9 @@ using UnityEngine;
 public class SpiralPattern : MonoBehaviour
 {
     [SerializeField]
+    private GameObject bullet;
+
+    [SerializeField]
     private int bulletAmount = 4;
 
     private float angle = 0f;
@@ -21,7 +24,7 @@ public class SpiralPattern : MonoBehaviour
     private Vector2 bulletMoveDirection;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         InvokeRepeating("Fire", 0f, fireRate);  //The difference between the second and third parameters controls the rate of fire
     }
@@ -36,12 +39,12 @@ public class SpiralPattern : MonoBehaviour
             Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMoveVector - transform.position).normalized;
 
-            GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
-            bul.transform.position = transform.position;
-            bul.transform.rotation = transform.rotation;
-            bul.SetActive(true);
-            bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
-            bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
+            GameObject bul = Instantiate(bullet);
+                bul.transform.position = transform.position;
+                bul.transform.rotation = transform.rotation;
+                bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+                bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
+                Destroy(bul, 5f);
 
             angle += 360 / bulletAmount;   //The rate at which the bullet pattern will spiral
 
@@ -52,5 +55,10 @@ public class SpiralPattern : MonoBehaviour
         }
 
         angle += spiralRotation;
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("Fire");
     }
 }

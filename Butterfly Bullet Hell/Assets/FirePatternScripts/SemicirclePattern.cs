@@ -5,6 +5,9 @@ using UnityEngine;
 public class SemicirclePattern : MonoBehaviour
 {
     [SerializeField]
+    private GameObject bullet;
+
+    [SerializeField]
     private int bulletsAmount = 10;
 
     [SerializeField]
@@ -19,7 +22,7 @@ public class SemicirclePattern : MonoBehaviour
     private Vector2 bulletMoveDirection;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         InvokeRepeating("Fire", 0f, fireRate);
     }
@@ -37,15 +40,20 @@ public class SemicirclePattern : MonoBehaviour
             Vector3 bulMoveVector = new Vector3(bulDirX, bulDirY, 0f);
             Vector2 bulDir = (bulMoveVector - transform.position).normalized;
 
-            GameObject bul = BulletPool.bulletPoolInstance.GetBullet();
+            GameObject bul = Instantiate(bullet);
                 bul.transform.position = transform.position;
                 bul.transform.rotation = transform.rotation;
-                bul.SetActive(true);
                 bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
                 bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
+                Destroy(bul, 5f);
 
             angle += angleStep;
         }
+    }
+
+    private void OnDisable()
+    {
+        CancelInvoke("Fire");
     }
 
 
