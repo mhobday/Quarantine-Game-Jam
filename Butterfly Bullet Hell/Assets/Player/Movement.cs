@@ -14,10 +14,13 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     private CircleCollider2D circCollider;
     private Animator anim;
+    private AudioSource audi;
+    public AudioClip shoot;
     void Start()
     {
         circCollider = GetComponent <CircleCollider2D> ();
         anim = GetComponent<Animator>();
+        audi = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -55,6 +58,8 @@ public class Movement : MonoBehaviour
             bul.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, 0);
             bul.GetComponent<Bullet>().SetMoveDirection(new Vector2(0, 1));
             bul.gameObject.tag = "Friend";
+            audi.clip = shoot;
+            audi.Play();
         }
 
         //Gabe's junk

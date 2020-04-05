@@ -13,4 +13,8 @@ public class ButtonFunctionality : MonoBehaviour
     public void Credits () {
         SceneManager.LoadScene("CreditsScene");
     }
+
+    public void Quit () {
+        Application.Quit();
+    }
 }

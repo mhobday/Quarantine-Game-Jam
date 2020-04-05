@@ -5,9 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Friend
+  - Music
   - Bird
-  - Frog
   - Dragonfly
+  - Frog
   layers:
   - Default
   - TransparentFX
