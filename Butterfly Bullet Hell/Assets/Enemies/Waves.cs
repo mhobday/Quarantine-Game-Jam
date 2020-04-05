@@ -17,7 +17,6 @@ public class Waves : MonoBehaviour
     void Start()
     {
         float space = Mathf.Abs(leftEdge) + Mathf.Abs(rightEdge);
-        birdLine(true, 3, 0, 5);
     }
     public void spawnBird(bool direction, float x, float y)
     {
