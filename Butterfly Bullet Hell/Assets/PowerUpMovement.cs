@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class PowerUpMovement : MonoBehaviour
 {
-    public double frequency;
     public int swing;
     private double count = 0;
 
