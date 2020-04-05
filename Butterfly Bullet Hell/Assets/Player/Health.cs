@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class Health : MonoBehaviour
     //Immune is the length of time you are immune after pressing shift
     public float immune = 0f;
     public AudioClip ouch;
+    public AudioClip snacc;
     private AudioSource audi;
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,16 @@ public class Health : MonoBehaviour
             invFrames = 1f;
             hp--;
             audi.clip = ouch;
+            audi.Play();
+
+            if (hp <= 0) {
+                SceneManager.LoadScene("CreditsScene");
+            }
+        }
+        if(col.gameObject.tag == "Power")
+        {
+            hp++;
+            audi.clip = snacc;
             audi.Play();
         }
     }

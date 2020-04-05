@@ -128,6 +128,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 851303437, guid: 1059bb6b4ae12ca4f82a6c77c900111c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: bb67533f461bec14098d10841b7f642f, type: 3}
     - target: {fileID: 2280428230427448644, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
         type: 3}
       propertyPath: m_Name
@@ -188,6 +192,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2280428230427448698, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
+        type: 3}
+      propertyPath: ouch
+      value: 
+      objectReference: {fileID: 8300000, guid: b262484028b648544ab3afe830781554, type: 3}
+    - target: {fileID: 2280428230427448699, guid: 1059bb6b4ae12ca4f82a6c77c900111c,
+        type: 3}
+      propertyPath: shoot
+      value: 
+      objectReference: {fileID: 8300000, guid: d386e8af7b09d0e4297b5fdbdf92b29f, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1059bb6b4ae12ca4f82a6c77c900111c, type: 3}
 --- !u!1001 &414495886
@@ -770,11 +784,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 474093416942991606, guid: 52051214acd060345a45c5af40023cd2,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2460212566594368634, guid: e6f63650be9354c47a5ea45e7c0bda83,
         type: 3}
       propertyPath: m_Name
@@ -835,6 +844,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 474093416942991606, guid: 52051214acd060345a45c5af40023cd2,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 52051214acd060345a45c5af40023cd2, type: 3}
 --- !u!1001 &1927120837
@@ -853,6 +867,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 3101635763681225306, guid: e6f63650be9354c47a5ea45e7c0bda83,
+        type: 3}
+      propertyPath: m_Radius
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8448493075787881211, guid: e6f63650be9354c47a5ea45e7c0bda83,
         type: 3}
