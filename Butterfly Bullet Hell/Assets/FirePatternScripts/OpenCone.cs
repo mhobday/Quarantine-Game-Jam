@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class OpenCone : MonoBehaviour
 {
-    private bool moveRight = true;
+    private bool moveClockwise = true;
 
     [SerializeField]
     private int bulletsAmount = 10;
+
+    [SerializeField]
+    private float bulletAcceleration = 1f;
 
     [SerializeField]
     private float startAngle = 90f, endAngle = 270f;
@@ -40,6 +43,11 @@ public class OpenCone : MonoBehaviour
         float angleStep = (endAngle - startAngle) / bulletsAmount;
         float angle = startAngle;
 
+        if (coneRotation + coneWidth >= 180)
+        {
+            angle += 360;
+        }
+
         for (int i = 0; i <= bulletsAmount; i++)
         {
             float bulDirX = transform.position.x + Mathf.Sin((angle * Mathf.PI) / 180f);
@@ -55,19 +63,20 @@ public class OpenCone : MonoBehaviour
                 bul.transform.rotation = transform.rotation;
                 bul.SetActive(true);
                 bul.GetComponent<Bullet>().SetMoveDirection(bulDir);
+                bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
             }
 
             angle += angleStep;
 
         }
 
-        if(moveRight)
+        if(moveClockwise)
         {
             coneRotation += coneRotationRate;
 
             if(coneRotation >= coneRotationRange)
             {
-                moveRight = false;
+                moveClockwise = false;
             }
         }
         else
@@ -76,7 +85,7 @@ public class OpenCone : MonoBehaviour
 
             if (coneRotation <= (-1) * coneRotationRange)
             {
-                moveRight = true;
+                moveClockwise = true;
             }
         }
     }

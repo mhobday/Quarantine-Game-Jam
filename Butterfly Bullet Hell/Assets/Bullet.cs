@@ -5,19 +5,27 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Vector2 moveDirection;
-    public float moveSpeed = 5f;
-    private Animator anim;
+
+    [SerializeField]
+    private float initialSpeed = 5f;
+
+    [SerializeField]
+    private float moveSpeed = 5f;
+
+    [SerializeField]
+    public float acceleration = 1f;
 
     private void OnEnable()
     {
         Invoke("Destroy", 3f);
+        this.moveSpeed = this.initialSpeed;
+        InvokeRepeating("Accelerate", 0f, 0.5f);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent <Animator>();
-        anim.Play("Bullet");
+        moveSpeed = initialSpeed;
     }
 
     // Update is called once per frame
@@ -31,27 +39,18 @@ public class Bullet : MonoBehaviour
         moveDirection = dir;
     }
 
+    public void Accelerate()
+    {
+        moveSpeed *= this.acceleration;
+    }
+
     private void Destroy()
     {
-        if(this.gameObject.tag == "Friend")
-        {
-            Destroy(this.gameObject);
-        }    
-        else
-        { 
-            gameObject.SetActive(false);
-        }    
+        gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
         CancelInvoke();
-    }
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        if(this.gameObject.tag == "Friend" && col.gameObject.tag != "Player")
-        {
-            Destroy(this.gameObject);
-        }
     }
 }
