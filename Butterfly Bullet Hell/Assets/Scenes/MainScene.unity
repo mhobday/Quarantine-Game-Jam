@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &171923608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7591995485284181013, guid: b35bc6023c749704e8537d85c3891509,
+    type: 3}
+  m_PrefabInstance: {fileID: 1692843682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -215,8 +221,9 @@ GameObject:
   - component: {fileID: 1069920923}
   - component: {fileID: 1069920922}
   - component: {fileID: 1069920921}
+  - component: {fileID: 1069920924}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -305,7 +312,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &8573053582247170035
+--- !u!114 &1069920924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1069920920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9164cf9f1d60ca44b84638f8627adffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 171923608}
+  heart: {fileID: 2063404482638592260, guid: e857893d7cd3474479e8195035792f3a, type: 3}
+--- !u!1001 &1692843682
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
