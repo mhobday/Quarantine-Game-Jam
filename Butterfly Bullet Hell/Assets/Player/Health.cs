@@ -13,6 +13,8 @@ public class Health : MonoBehaviour
     public float cooldown = 2f;
     //Immune is the length of time you are immune after pressing shift
     public float immune = 0f;
+    public AudioClip ouch;
+    private AudioSource audi;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,6 +50,8 @@ public class Health : MonoBehaviour
         {
             invFrames = 1f;
             hp--;
+            audi.clip = ouch;
+            audi.Play();
         }
     }
 }

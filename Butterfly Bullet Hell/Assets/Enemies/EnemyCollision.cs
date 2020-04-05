@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyCollision : MonoBehaviour
 {
+    public AudioSource audi;
     public int health = 4;
 
     private int counter = 0;
@@ -15,8 +16,12 @@ public class EnemyCollision : MonoBehaviour
             health --;
             if(health == 0)
             {
+                if(this.gameObject.tag == "Bird")
+                {
+                    audi = this.GetComponent<AudioSource>();
+                    audi.Play();
+                }
                 Destroy(this.gameObject);
-                
             }
             transform.position = new Vector3(transform.position.x, transform.position.y, -200);
         }
