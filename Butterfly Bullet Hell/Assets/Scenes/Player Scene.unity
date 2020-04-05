@@ -775,6 +775,7 @@ GameObject:
   - component: {fileID: 1737270424}
   - component: {fileID: 1737270426}
   - component: {fileID: 1737270425}
+  - component: {fileID: 1737270427}
   m_Layer: 5
   m_Name: Lives
   m_TagString: Untagged
@@ -841,6 +842,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1737270423}
   m_CullTransparentMesh: 0
+--- !u!114 &1737270427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737270423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0908e2277f494444f8b2ae16a35e5037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  stock: {fileID: 0}
 --- !u!1001 &1927120837
 PrefabInstance:
   m_ObjectHideFlags: 0
