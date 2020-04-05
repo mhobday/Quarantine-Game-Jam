@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
-public class downMovement : MonoBehaviour
+public class DragonflyLeft : MonoBehaviour
 {
-
-    float speed = .01f;
-
+    public float speed = .01f;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +14,12 @@ public class downMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - speed, transform.position.x);
+        transform.position = new Vector3((transform.position.x - speed), transform.position.y, transform.position.z);
         Vector3 viewPosition = 
         Camera.main.WorldToViewportPoint(transform.position);
-        if(viewPosition.y < 0)
+        if(viewPosition.x < 0)
         {
-            Destroy(this.gameObject);
-        }
+            Object.Destroy(this.gameObject);
+        } 
     }
 }
