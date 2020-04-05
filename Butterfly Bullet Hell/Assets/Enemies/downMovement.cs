@@ -6,12 +6,12 @@ using System;
 public class downMovement : MonoBehaviour
 {
 
-    float speed = .9f;
+    public float speed = .9f;
 
     // Start is called before the first frame update
     void Start()
     {
-        speed = .9f;
+        speed = 0f;
     }
 
     // Update is called once per frame

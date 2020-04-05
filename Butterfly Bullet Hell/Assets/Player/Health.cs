@@ -58,6 +58,10 @@ public class Health : MonoBehaviour
             }
             audi.clip = ouch;
             audi.Play();
+
+            if (hp <= 0) {
+                SceneManager.LoadScene("CreditsScene");
+            }
         }
 
         if(col.gameObject.tag == "Power")
