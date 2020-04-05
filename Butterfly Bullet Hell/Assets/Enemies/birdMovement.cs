@@ -12,10 +12,7 @@ public class birdMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(transform.position.x >= 0)
-        {
-            moveRight = false;
-        }
+        
     }
 
     // Update is called once per frame
