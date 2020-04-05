@@ -5,7 +5,7 @@ using System;
 
 public class birdMovement : MonoBehaviour
 {
-    public float baseSpeed = .01f;
+    public float baseSpeed = 3f;
     public bool moveRight = true;
     float timer = 0;
     
@@ -24,11 +24,11 @@ public class birdMovement : MonoBehaviour
         timer += Time.deltaTime;
         if(moveRight)
         {
-            transform.position = new Vector3((transform.position.x + baseSpeed), transform.position.y, transform.position.z);
+            transform.position = new Vector3((transform.position.x) + baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else
         {
-            transform.position = new Vector3((transform.position.x - baseSpeed), transform.position.y, transform.position.z);
+            transform.position = new Vector3((transform.position.x)- baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         Vector3 viewPosition = 
         Camera.main.WorldToViewportPoint(transform.position);

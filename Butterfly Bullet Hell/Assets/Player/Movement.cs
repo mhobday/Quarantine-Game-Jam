@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private GameObject bullet;
     //Used in all movement funcions to decide how far to move
-    public float baseSpeed = .05f;
+    public float baseSpeed = 4f;
     //Delay is the amount of time before you can fie again
     public float delay = 10f;
     public bool caterpillar = false;
@@ -24,19 +24,19 @@ public class Movement : MonoBehaviour
         delay--;
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.position = new Vector3(transform.position.x - baseSpeed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            transform.position = new Vector3(transform.position.x + baseSpeed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + baseSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + baseSpeed * Time.deltaTime, transform.position.z);
         }
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed * Time.deltaTime, transform.position.z);
         }
         if (Input.GetKey(KeyCode.Space) && delay < 0)
         {
@@ -55,19 +55,19 @@ public class Movement : MonoBehaviour
         }
         if(viewPosition.x < sideOffset)
         {
-            transform.position = new Vector3(transform.position.x + baseSpeed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x + baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         else if(viewPosition.x > 1 - sideOffset)
         {
-            transform.position = new Vector3(transform.position.x - baseSpeed, transform.position.y, transform.position.z);
+            transform.position = new Vector3(transform.position.x - baseSpeed * Time.deltaTime, transform.position.y, transform.position.z);
         }
         if(viewPosition.y < .09)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y + baseSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y + baseSpeed * Time.deltaTime, transform.position.z);
         }
         else if(viewPosition.y > .9)
         {
-            transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed, transform.position.z);
+            transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed * Time.deltaTime, transform.position.z);
         }
     }
 }
