@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class SingleTrackingPattern : MonoBehaviour
 {
-    [SerializeField]
-    private int bulletsAmount = 10;
 
     [SerializeField]
     private float fireRate = 2f;
+
+    [SerializeField]
+    private float bulletAcceleration = 1f;
 
     private Vector2 bulletMoveDirection;
 
@@ -33,8 +34,9 @@ public class SingleTrackingPattern : MonoBehaviour
         bul.transform.rotation = transform.rotation;
         bul.SetActive(true);
         bul.GetComponent<Bullet>().SetMoveDirection(bulMoveVector);
+        bul.GetComponent<Bullet>().acceleration = this.bulletAcceleration;
 
-            
-   
+
+
     }
 }
