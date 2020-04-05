@@ -60,6 +60,8 @@ public class Movement : MonoBehaviour
             bul.gameObject.tag = "Friend";
             audi.clip = shoot;
             audi.Play();
+
+            Destroy(bul, 5f);
         }
 
         //Gabe's junk
