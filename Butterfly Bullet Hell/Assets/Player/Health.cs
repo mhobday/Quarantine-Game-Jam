@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Health : MonoBehaviour
 {
@@ -51,9 +52,14 @@ public class Health : MonoBehaviour
         {
             invFrames = 1f;
             hp--;
+            if(hp <= 0)
+            {
+                SceneManager.LoadScene("CreditsScene");
+            }
             audi.clip = ouch;
             audi.Play();
         }
+
         if(col.gameObject.tag == "Power")
         {
             hp++;
