@@ -6,7 +6,7 @@ using System;
 public class turretAim : MonoBehaviour
 {
     public UnityEngine.GameObject player;
-    public float rotationSpeed = 360f;
+    //public float rotationSpeed = 10f;
 
     // Start is called before the first frame update
     void Start()
