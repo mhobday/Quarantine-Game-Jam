@@ -25,7 +25,7 @@ public class EnemyManagerScripts : MonoBehaviour
     public float frogY = 4.5f;
     public float birdHeight = 4;
     
-    private float bossCounter;
+    public float bossCounter;
     public float spawnRate;
 
     public int bossSpawn;
@@ -48,9 +48,9 @@ public class EnemyManagerScripts : MonoBehaviour
 
     public GameObject spawn;
 
-    private float spawnTimer;
+    public float spawnTimer;
 
-    private int numDragonflys = 0;
+    public int numDragonflys = 0;
 
     private int numBirds = 0;
 
@@ -109,17 +109,18 @@ public class EnemyManagerScripts : MonoBehaviour
 
     void birds(int num)
     {
-        bossCounter += (numBirds - num);
         numBirds = num;
         int [] used = {-8, -8};
+        int counter = 0;
         while(numBirds < maxBirds)
         {
-            used[numFrogs - num] = Random.Range(-7,7);
+            used[counter] = Random.Range(-7,7);
             while(used[1] != -8 && used[0] == used[1])
             {
                 used[1] = Random.Range(-7,7);
             }
-            spawnBird(true, used[numFrogs - num]);
+            spawnBird(true, used[counter]);
+            counter++;
             numBirds++;
             if(numBirds - num >= maxBirdSpawn)
             {
@@ -130,17 +131,18 @@ public class EnemyManagerScripts : MonoBehaviour
 
     void frogs(int num)
     {
-        bossCounter += (numFrogs - num);
         numFrogs = num;
         int [] used = {-8, -8};
+        int counter = 0;
         while(numFrogs < maxFrogs)
         {
-            used[numFrogs - num] = Random.Range(-7,7);
+            used[counter] = Random.Range(-7,7);
             while(used[1] != -8 && used[0] == used[1])
             {
                 used[1] = Random.Range(-7,7);
             }
-            spawnFrog(used[numFrogs - num]);
+            spawnFrog(used[counter]);
+            counter++;
             numFrogs++;
             if(numFrogs - num >= maxFrogSpawn)
             {
@@ -151,7 +153,6 @@ public class EnemyManagerScripts : MonoBehaviour
 
     void dragonflys(int num)
     {
-        bossCounter += (numDragonflys - num) * 0.3f;
         numDragonflys = num;
         int dragonflyDirection = Random.Range(1,5);
         int numDragonflysSpawn = Random.Range(2,5);
