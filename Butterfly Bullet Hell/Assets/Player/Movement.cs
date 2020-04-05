@@ -37,7 +37,7 @@ public class Movement : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y - baseSpeed, transform.position.z);
         }
-        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.LeftShift)) && delay < 0)
+        if (Input.GetKey(KeyCode.Space) && delay < 0)
         {
             delay = 10f;
             GameObject bul = Instantiate(bullet);
