@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6365611951555708695}
   - component: {fileID: 6214976667569698843}
+  - component: {fileID: 588638945932599080}
+  - component: {fileID: 9013827812537167963}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: EnemyManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,3 +83,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &588638945932599080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013243416357618878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ab3931551280404fab7e8f6a64c33b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 4390083741566622106, guid: b0f7290dfd9ddd641b5ba7eab8291874, type: 3}
+  frog: {fileID: 2460212566594368634, guid: e6f63650be9354c47a5ea45e7c0bda83, type: 3}
+  downDragonfly: {fileID: 8342534808792051983, guid: 134aea5e43b60c641ba7f628a44de52a,
+    type: 3}
+  rightDragonfly: {fileID: 855449512683529227, guid: 4712b0266310f234099201209a824b2b,
+    type: 3}
+  leftDragonfly: {fileID: 7828220463297596809, guid: 7e8028a1e3f95974a8c07cb8e73f1a00,
+    type: 3}
+  crossLeftDragonfly: {fileID: 8122334207578685154, guid: c24ed4aefea13654c9fd3edf3f4bf2a3,
+    type: 3}
+  crossRightDragonfly: {fileID: 2738850667667919740, guid: 52051214acd060345a45c5af40023cd2,
+    type: 3}
+  leftEdge: -8
+  rightEdge: 8
+  enemyZ: 0
+  frogY: 4.5
+  birdHeight: 4
+  spawnRate: 0
+  bossSpawn: 0
+  maxFrogs: 0
+  maxBirds: 0
+  maxDragonflys: 0
+  dragonflyTimer: 0
+  dragonflyRate: 0
+  maxBirdSpawn: 0
+  maxDragonflySpawn: 0
+  maxFrogSpawn: 0
+  spawn: {fileID: 0}
+--- !u!114 &9013827812537167963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4013243416357618878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b213e90d4d69a145883191373b0da67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bird: {fileID: 0}
+  frog: {fileID: 0}
+  dragonfly: {fileID: 0}
+  leftEdge: -8
+  rightEdge: 8
+  enemyZ: 0
+  frogY: 4.5
+  birdHeight: 4

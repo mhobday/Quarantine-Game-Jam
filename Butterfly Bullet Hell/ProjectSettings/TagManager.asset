@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Friend
+  - Bird
+  - Frog
+  - Dragonfly
   layers:
   - Default
   - TransparentFX

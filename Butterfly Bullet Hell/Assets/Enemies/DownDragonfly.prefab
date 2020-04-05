@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: -1427233040908406771}
   m_Layer: 0
   m_Name: DownDragonfly
-  m_TagString: Untagged
+  m_TagString: Dragonfly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
