@@ -10,12 +10,12 @@ public class lives : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        stock = this.GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //stock.text = player.hp.toString();
+        stock.text = "x" + player.GetComponent<Health>().hp.ToString();
     }
 }
