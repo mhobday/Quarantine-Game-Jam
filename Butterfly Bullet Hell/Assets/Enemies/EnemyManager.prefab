@@ -112,6 +112,7 @@ MonoBehaviour:
   enemyZ: 0
   frogY: 4.5
   birdHeight: 4
+  bossCounter: 0
   spawnRate: 0
   bossSpawn: 0
   maxFrogs: 0
@@ -123,6 +124,8 @@ MonoBehaviour:
   maxDragonflySpawn: 0
   maxFrogSpawn: 0
   spawn: {fileID: 0}
+  spawnTimer: 0
+  numDragonflys: 0
 --- !u!114 &9013827812537167963
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b213e90d4d69a145883191373b0da67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bird: {fileID: 0}
-  frog: {fileID: 0}
+  bird: {fileID: 4390083741566622106, guid: b0f7290dfd9ddd641b5ba7eab8291874, type: 3}
+  frog: {fileID: 2460212566594368634, guid: e6f63650be9354c47a5ea45e7c0bda83, type: 3}
   dragonfly: {fileID: 0}
   leftEdge: -8
   rightEdge: 8
