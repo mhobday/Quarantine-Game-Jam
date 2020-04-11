@@ -11,13 +11,13 @@ public class downMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = 0f;
+        speed = .9f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.x);
+        transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
         Vector3 viewPosition = 
         Camera.main.WorldToViewportPoint(transform.position);
         if(viewPosition.y < 0)

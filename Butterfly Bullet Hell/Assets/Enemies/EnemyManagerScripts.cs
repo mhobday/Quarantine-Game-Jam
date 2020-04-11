@@ -57,6 +57,8 @@ public class EnemyManagerScripts : MonoBehaviour
     private int numFrogs = 0;
 
     private MonoBehaviour wave;
+
+    public int score;
     
 
     void Start()
@@ -81,6 +83,7 @@ public class EnemyManagerScripts : MonoBehaviour
         frogY = 4.5f;
         birdHeight = 4;
         //wave = GetComponent<Waves>();
+        score = 0;
 
 
     }
@@ -95,12 +98,15 @@ public class EnemyManagerScripts : MonoBehaviour
             birds(GameObject.FindGameObjectsWithTag("Bird").Length);
             frogs(GameObject.FindGameObjectsWithTag("Frog").Length);
             spawnTimer = 0;
+            spawnRate -= 0.05f;
         }
         if(dragonflyTimer > dragonflyRate)
         {
             dragonflys(GameObject.FindGameObjectsWithTag("Dragonfly").Length);
             dragonflyTimer = 0;
+            spawnRate -= 0.05f;
         }
+
         if(bossCounter > bossSpawn && numBirds == 0 && numDragonflys == 0 && numFrogs == 0)
         {
             //Spawn boss
@@ -122,6 +128,7 @@ public class EnemyManagerScripts : MonoBehaviour
             spawnBird(true, used[counter]);
             counter++;
             numBirds++;
+            score++;
             if(numBirds - num >= maxBirdSpawn)
             {
                 break;
@@ -144,6 +151,7 @@ public class EnemyManagerScripts : MonoBehaviour
             spawnFrog(used[counter]);
             counter++;
             numFrogs++;
+            score++;
             if(numFrogs - num >= maxFrogSpawn)
             {
                 break;
@@ -208,6 +216,7 @@ public class EnemyManagerScripts : MonoBehaviour
                 used++;
             }
             numDragonflys++;
+            score++;
             if(numDragonflys - num >= numDragonflysSpawn)
             {
                 break;
@@ -225,6 +234,7 @@ public class EnemyManagerScripts : MonoBehaviour
     {
         Instantiate(frog);
         frog.transform.position = new Vector3(x, frogY, enemyZ);
+        frog.gameObject.GetComponent<turretAim>().player = GameObject.FindGameObjectsWithTag("Player")[0];
     }
     public void spawnDownDragonFly(float x, float y)
     {
